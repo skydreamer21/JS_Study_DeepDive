@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const person = {
+            firstName: 'Ungmo',
+            lastName: 'Lee',
+
+            get fullName() {
+                return `${this.firstName} _ ${this.lastName}`;
+           },
+
+           set fullName(name) {
+               [this.firstName,this.lastName] = name.split(' ');
+           }
+        };
+
+        // 데이터 프로퍼티를 통한 프로퍼티 값의 참조
+        console.log(person.firstName + ' ' + person.lastName);
+
+        // 접근자 프로퍼티를 통한 프로퍼티 값의 저장
+        // setter 함수
+        person.fullName = 'Heegun Ree';
+        console.log(person);
+
+        // 접근자 프로퍼티를 통한 프로퍼티 값의 참조
+        // getter 함수
+        console.log(person.fullName);
+        
+        // firstName : 데이터 프로퍼티
+        let descriptor = Object.getOwnPropertyDescriptor(person, 'firstName');
+        console.log(descriptor);
+        
+        // fullName : 접근자 프로퍼티
+        descriptor = Object.getOwnPropertyDescriptor(person,'fullName');
+        console.log(descriptor);
+    </script>
+</body>
+</html>
+
