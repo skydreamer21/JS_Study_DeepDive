@@ -11,5 +11,5 @@ class MyMath {
     }
 }
 
-console.log(MyMath.PI);
-console.log(MyMath.increment());
+console.log(MyMath.PI); // 3.142857142857143
+console.log(MyMath.increment()); // 11
